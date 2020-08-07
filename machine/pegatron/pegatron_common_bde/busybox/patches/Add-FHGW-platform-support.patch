@@ -1,0 +1,57 @@
+From eda1d0e5924efea1599b626c1c5d3c6ceafbc894 Mon Sep 17 00:00:00 2001
+From: Max Lee <max_lee@pegatroncorp.com>
+Date: Fri, 7 Aug 2020 16:43:22 +0800
+Subject: [PATCH] Add FHGW platform support
+
+---
+ include/mb_detect.h        | 1 +
+ miscutils/mb_detect.c      | 1 +
+ miscutils/sys_eeprom_i2c.c | 8 ++++++++
+ 3 files changed, 10 insertions(+)
+
+diff --git a/include/mb_detect.h b/include/mb_detect.h
+index dac33fa..e0e7cf2 100644
+--- a/include/mb_detect.h
++++ b/include/mb_detect.h
+@@ -28,6 +28,7 @@ enum {
+ 	JAGUAR,
+ 	BUGATTI2,
+ 	GEMINI,
++        FHGW,
+ 	MB_LAST
+ };
+ 
+diff --git a/miscutils/mb_detect.c b/miscutils/mb_detect.c
+index cbf1bcb..934d590 100644
+--- a/miscutils/mb_detect.c
++++ b/miscutils/mb_detect.c
+@@ -11,6 +11,7 @@ SysBoardInfo sysBoardInfo[] = {
+ 	{ 0x05, "jaguar",		"FB_6256_BN_B\0", "fb_6256_bn_b\0", 0, 0 },
+ 	{ 0x07, "bugatti2",		"FB_6032_BN_F\0", "fb_6032_bn_f\0", 1, 0 },
+ 	{ 0x09, "gemini",		"FM_6256_BN_F\0", "fm_6256_bn_f\0", 0, 0 },
++	{ 0x0a, "FHGW",		        "FM_6609_BN_FF\0", "fm_6609_bn_ff\0", 0, 0 },
+ };
+ 
+ static u32 mb_id_get_from_cpld(void)
+diff --git a/miscutils/sys_eeprom_i2c.c b/miscutils/sys_eeprom_i2c.c
+index 196dd1b..5b448f2 100644
+--- a/miscutils/sys_eeprom_i2c.c
++++ b/miscutils/sys_eeprom_i2c.c
+@@ -63,6 +63,14 @@ struct mb_info mb_i2c_info[] = {
+ 		.wp_disable = 0x00,
+ 		.wp_enable = 0x04
+ 	},
++	{
++		.motherboard_id = 0xa, /* FHGW */
++		.mux = {.addr = 0x73, .channel = 1},
++		.eeprom_addr = 0x75,
++		.eeprom_offset = 0x12,
++		.wp_disable = 0x00,
++		.wp_enable = 0x04
++	},
+ 	{
+ 		.motherboard_id = 0xff,
+ 		.mux = {.addr = 0xff, .channel = 0xff},
+-- 
+2.27.0
+
