@@ -5,4 +5,6 @@ onie-sys-eeprom-mux-enable.patch
 onie-sys-eeprom-write-protection.patch
 support-i2c-mux-driver-pca9641.patch
 Add-force-option-for-sys_eeprom.patch
-Add-FHGW-platform-support.patch
+add-fn-8032-bn-f-platform.patch
+onie-syseeprom-support-ipmi.patch
+add-fm-6609-bn-ff-platform.patch
