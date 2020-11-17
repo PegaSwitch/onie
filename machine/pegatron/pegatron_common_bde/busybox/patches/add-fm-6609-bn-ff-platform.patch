@@ -47,9 +47,9 @@ index bc451da..b24e1df 100644
 +		.motherboard_id = 0xA, /* FHGW */
 +		.mux = {.addr = 0x73, .channel = 1},
 +		.eeprom_addr = 0x75,
-+		.eeprom_offset = 0x12,
-+		.wp_disable = 0x00,
-+		.wp_enable = 0x04
++		.eeprom_offset = 0x14,
++		.wp_disable = 0x01,
++		.wp_enable = 0x03
 +	},
  	{
  		.motherboard_id = 0xff,

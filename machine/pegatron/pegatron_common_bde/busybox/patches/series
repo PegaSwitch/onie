@@ -8,3 +8,6 @@ Add-force-option-for-sys_eeprom.patch
 add-fn-8032-bn-f-platform.patch
 onie-syseeprom-support-ipmi.patch
 add-fm-6609-bn-ff-platform.patch
+change-fm_6256_bn_f-the-platform-name.patch
+change-fn_8032_bn_f-the-platform-name.patch
+enhance-mbdetect-command-to-generate-onieid-by-hardware.patch

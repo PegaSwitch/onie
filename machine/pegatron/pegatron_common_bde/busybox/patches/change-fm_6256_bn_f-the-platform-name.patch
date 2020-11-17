@@ -1,0 +1,27 @@
+From 7add3a0e12177cb282fa940e7534da07d62b3c35 Mon Sep 17 00:00:00 2001
+From: Wolf Lin <Wolf_Lin@pegatroncorp.com>
+Date: Mon, 26 Oct 2020 11:04:02 +0800
+Subject: [PATCH] Change the platform name to 'FM_6256_BN_F' to 'FM6256_BNF'
+
+---
+ miscutils/mb_detect.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/miscutils/mb_detect.c b/miscutils/mb_detect.c
+index 62b39da..7300422 100644
+--- a/miscutils/mb_detect.c
++++ b/miscutils/mb_detect.c
+@@ -12,8 +12,8 @@ SysBoardInfo sysBoardInfo[] = {
+ 	{ 0x07, "bugatti2",		"FB_6032_BN_F\0", "fb_6032_bn_f\0", 1, 0 },
+ 	{ 0x08, "astonMartin",		"FN_8032_BN_F\0", "fn_8032_bn_f\0", 0, 0 },
+ 	{ 0x08, "astonMartin(BMC)",	"FN_8032_BA_F\0", "fn_8032_ba_f\0", 0, 1 },
+-	{ 0x09, "gemini",		"FM_6256_BN_F\0", "fm_6256_bn_f\0", 0, 0 },
+-	{ 0x09, "gemini(BMC)",		"FM_6256_BA_F\0", "fm_6256_ba_f\0", 0, 1 },
++	{ 0x09, "gemini",		"FM6256_BNF\0", "fm6256_bnf\0", 0, 0 },
++	{ 0x09, "gemini(BMC)",		"FM6256_BAF\0", "fm6256_baf\0", 0, 1 },
+ 	{ 0x0A, "fhgw",			"FM_6609_BN_FF\0", "fm_6609_bn_ff\0", 0, 0 }
+ };
+ 
+-- 
+2.17.1
+

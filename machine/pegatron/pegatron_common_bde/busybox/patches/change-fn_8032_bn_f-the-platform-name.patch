@@ -1,0 +1,42 @@
+From b2c4aeb5dbe373bc3b77f1f9d7376791df68b38b Mon Sep 17 00:00:00 2001
+From: Wolf Lin <Wolf_Lin@pegatroncorp.com>
+Date: Wed, 28 Oct 2020 18:26:51 +0800
+Subject: [PATCH 1/2] Change the platform name to 'FN_8032_BN_F' to
+ 'FN8032_BNF'
+
+---
+ miscutils/mb_detect.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/miscutils/mb_detect.c b/miscutils/mb_detect.c
+index 7300422..a671316 100644
+--- a/miscutils/mb_detect.c
++++ b/miscutils/mb_detect.c
+@@ -7,11 +7,11 @@
+ extern void mbdetect_usage(void);
+ 
+ SysBoardInfo sysBoardInfo[] = {
+-	{ 0x04, "bugatti", 		"FB_6032_BN_F\0", "fb_6032_bn_f\0", 0, 0 },
+-	{ 0x05, "jaguar",		"FB_6256_BN_B\0", "fb_6256_bn_b\0", 0, 0 },
+-	{ 0x07, "bugatti2",		"FB_6032_BN_F\0", "fb_6032_bn_f\0", 1, 0 },
+-	{ 0x08, "astonMartin",		"FN_8032_BN_F\0", "fn_8032_bn_f\0", 0, 0 },
+-	{ 0x08, "astonMartin(BMC)",	"FN_8032_BA_F\0", "fn_8032_ba_f\0", 0, 1 },
++	{ 0x04, "bugatti", 		"FB6032_BNF\0", "fb6032_bnf\0", 0, 0 },
++	{ 0x05, "jaguar",		"FB6256_BNB\0", "fb6256_bnb\0", 0, 0 },
++	{ 0x07, "bugatti2",		"FB6032_BNF\0", "fb6032_bnf\0", 1, 0 },
++	{ 0x08, "astonMartin",		"FN8032_BNF\0", "fn8032_bnf\0", 0, 0 },
++	{ 0x08, "astonMartin(BMC)",	"FN8032_BAF\0", "fn8032_baf\0", 0, 1 },
+ 	{ 0x09, "gemini",		"FM6256_BNF\0", "fm6256_bnf\0", 0, 0 },
+ 	{ 0x09, "gemini(BMC)",		"FM6256_BAF\0", "fm6256_baf\0", 0, 1 },
+ 	{ 0x0A, "fhgw",			"FM_6609_BN_FF\0", "fm_6609_bn_ff\0", 0, 0 }
+@@ -76,7 +76,6 @@ static u32 mb_id_get_from_gpio(void)
+ 
+ 	board_id = (id[3] << 3) + (id[2] << 2) + (id[1] << 1) + id[0];
+ 
+-error:
+ 	return board_id;
+ }
+ 
+-- 
+2.17.1
+
